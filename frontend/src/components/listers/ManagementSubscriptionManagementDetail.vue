@@ -17,6 +17,9 @@
             <div>
                 <Date label="Date" v-model="item.date" :editMode="editMode" @change="change" />
             </div>
+            <div>
+                <Boolean label="SubProcessed" v-model="item.subProcessed" :editMode="editMode" @change="change" />
+            </div>
         </v-card-text>
 
         <v-card-actions>

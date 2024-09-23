@@ -21,6 +21,7 @@
             <Number label="UserId" v-model="value.userId" :editMode="editMode" :inputUI="''"/>
             <Boolean label="SubStatus" v-model="value.subStatus" :editMode="editMode" :inputUI="''"/>
             <String label="Date" v-model="value.date" :editMode="editMode" :inputUI="''"/>
+            <Boolean label="SubProcessed" v-model="value.subProcessed" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>

@@ -69,7 +69,6 @@
                     { text: "subId", value: "subId" },
                     { text: "userId", value: "userId" },
                     { text: "subStatus", value: "subStatus" },
-                    { text: "paymentId", value: "paymentId" },
                     { text: "date", value: "date" },
                     { text: "subProcessed", value: "subProcessed" },
                 ],
@@ -92,7 +91,6 @@
                 'subId': 0,
                 'userId': 0,
                 'subStatus': false,
-                'paymentId': 0,
                 'date': '',
                 'subProcessed': false,
             }

@@ -71,6 +71,7 @@
                     { text: "userId", value: "userId" },
                     { text: "subStatus", value: "subStatus" },
                     { text: "date", value: "date" },
+                    { text: "subProcessed", value: "subProcessed" },
                 ],
             payment : [],
             newValue: {},
@@ -93,6 +94,7 @@
                 'userId': 0,
                 'subStatus': false,
                 'date': '',
+                'subProcessed': false,
             }
         },
         methods: {

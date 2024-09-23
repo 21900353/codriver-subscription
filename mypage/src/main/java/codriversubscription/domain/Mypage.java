@@ -19,4 +19,5 @@ public class Mypage {
     private Long subId;
     private Boolean subStatus;
     private Date date;
+    private Boolean subProcessed;
 }

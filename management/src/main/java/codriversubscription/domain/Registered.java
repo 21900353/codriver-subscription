@@ -16,6 +16,7 @@ public class Registered extends AbstractEvent {
     private Long userId;
     private Boolean subStatus;
     private Date date;
+    private Boolean subProcessed;
 
     public Registered(SubscriptionManagement aggregate) {
         super(aggregate);

@@ -24,9 +24,6 @@
                                 SubStatus :  {{item.subStatus }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
-                                PaymentId :  {{item.paymentId }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
                                 Date :  {{item.date }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
@@ -83,8 +80,6 @@
                 if(val != undefined) {
                     var arr = this.list[val]._links.self.href.split('/');
                     obj['subId'] = arr[4]; 
-                    
-                    
                     
                     
                     

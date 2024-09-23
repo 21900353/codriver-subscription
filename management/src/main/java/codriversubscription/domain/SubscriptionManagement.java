@@ -27,6 +27,8 @@ public class SubscriptionManagement {
 
     private Date date;
 
+    private Boolean subProcessed;
+
     @PostUpdate
     public void onPostUpdate() {
         Registered registered = new Registered(this);

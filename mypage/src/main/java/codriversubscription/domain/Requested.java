@@ -1,14 +1,11 @@
 package codriversubscription.domain;
 
-import codriversubscription.domain.*;
 import codriversubscription.infra.AbstractEvent;
 import java.time.LocalDate;
 import java.util.*;
-import lombok.*;
+import lombok.Data;
 
-//<<< DDD / Domain Event
 @Data
-@ToString
 public class Requested extends AbstractEvent {
 
     private Long subId;
@@ -16,13 +13,4 @@ public class Requested extends AbstractEvent {
     private Boolean subStatus;
     private String date;
     private Boolean subProcessed;
-
-    public Requested(Subscription aggregate) {
-        super(aggregate);
-    }
-
-    public Requested() {
-        super();
-    }
 }
-//>>> DDD / Domain Event

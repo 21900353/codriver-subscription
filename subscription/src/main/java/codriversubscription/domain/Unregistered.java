@@ -14,4 +14,5 @@ public class Unregistered extends AbstractEvent {
     private Long userId;
     private Boolean subStatus;
     private Date date;
+    private Boolean subProcessed;
 }

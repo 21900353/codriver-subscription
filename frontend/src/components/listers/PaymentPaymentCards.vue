@@ -114,6 +114,7 @@
                 'userId': 0,
                 'subStatus': false,
                 'date': '',
+                'subProcessed': false,
             }
         },
         methods:{

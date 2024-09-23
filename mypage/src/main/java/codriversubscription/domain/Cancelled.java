@@ -1,18 +1,16 @@
 package codriversubscription.domain;
 
-import codriversubscription.domain.*;
 import codriversubscription.infra.AbstractEvent;
+import java.time.LocalDate;
 import java.util.*;
-import lombok.*;
+import lombok.Data;
 
 @Data
-@ToString
-public class Registered extends AbstractEvent {
+public class Cancelled extends AbstractEvent {
 
-    private Long id;
     private Long subId;
     private Long userId;
     private Boolean subStatus;
-    private Date date;
+    private String date;
     private Boolean subProcessed;
 }
