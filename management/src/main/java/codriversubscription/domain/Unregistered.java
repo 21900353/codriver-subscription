@@ -13,7 +13,9 @@ public class Unregistered extends AbstractEvent {
 
     private Long id;
     private Long subId;
+    private Long userId;
     private Boolean subStatus;
+    private Date date;
 
     public Unregistered(SubscriptionManagement aggregate) {
         super(aggregate);

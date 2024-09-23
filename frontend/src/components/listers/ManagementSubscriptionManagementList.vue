@@ -43,12 +43,16 @@
                             
                             
                             
+                            
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ SubId :  {{data.subId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ UserId :  {{data.userId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ SubStatus :  {{data.subStatus }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ Date :  {{data.date }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -117,7 +121,9 @@
             
             this.newValue = {
                 'subId': 0,
+                'userId': 0,
                 'subStatus': false,
+                'date': '2024-09-23',
             }
         },
         methods: {

@@ -25,6 +25,10 @@ public class Subscription {
 
     private Long paymentId;
 
+    private Date date;
+
+    private Boolean subProcessed;
+
     @PostPersist
     public void onPostPersist() {
         //Following code causes dependency to external APIs

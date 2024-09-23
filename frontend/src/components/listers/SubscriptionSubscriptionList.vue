@@ -44,6 +44,8 @@
                             
                             
                             
+                            
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -51,6 +53,8 @@
                             [ UserId :  {{data.userId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ SubStatus :  {{data.subStatus }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ PaymentId :  {{data.paymentId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ Date :  {{data.date }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ SubProcessed :  {{data.subProcessed }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -122,6 +126,8 @@
                 'userId': 0,
                 'subStatus': false,
                 'paymentId': 0,
+                'date': '2024-09-23',
+                'subProcessed': false,
             }
         },
         methods: {

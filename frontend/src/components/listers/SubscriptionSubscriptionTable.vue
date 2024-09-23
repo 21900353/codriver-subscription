@@ -70,6 +70,8 @@
                     { text: "userId", value: "userId" },
                     { text: "subStatus", value: "subStatus" },
                     { text: "paymentId", value: "paymentId" },
+                    { text: "date", value: "date" },
+                    { text: "subProcessed", value: "subProcessed" },
                 ],
             subscription : [],
             newValue: {},
@@ -91,6 +93,8 @@
                 'userId': 0,
                 'subStatus': false,
                 'paymentId': 0,
+                'date': '2024-09-23',
+                'subProcessed': false,
             }
         },
         methods: {

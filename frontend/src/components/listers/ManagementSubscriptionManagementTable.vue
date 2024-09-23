@@ -68,7 +68,9 @@
                 [
                     { text: "id", value: "id" },
                     { text: "subId", value: "subId" },
+                    { text: "userId", value: "userId" },
                     { text: "subStatus", value: "subStatus" },
+                    { text: "date", value: "date" },
                 ],
             subscriptionManagement : [],
             newValue: {},
@@ -87,7 +89,9 @@
 
             this.newValue = {
                 'subId': 0,
+                'userId': 0,
                 'subStatus': false,
+                'date': '2024-09-23',
             }
         },
         methods: {
