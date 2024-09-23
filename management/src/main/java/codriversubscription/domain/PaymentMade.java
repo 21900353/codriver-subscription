@@ -13,4 +13,5 @@ public class PaymentMade extends AbstractEvent {
     private Long subId;
     private Long userId;
     private Boolean subStatus;
+    private String date;
 }

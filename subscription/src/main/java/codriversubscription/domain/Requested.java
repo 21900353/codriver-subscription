@@ -15,7 +15,8 @@ public class Requested extends AbstractEvent {
     private Long userId;
     private Boolean subStatus;
     private Long paymentId;
-    private Date date;
+    private String date;
+    private Boolean subProcessed;
 
     public Requested(Subscription aggregate) {
         super(aggregate);

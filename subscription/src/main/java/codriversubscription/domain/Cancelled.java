@@ -14,7 +14,9 @@ public class Cancelled extends AbstractEvent {
     private Long subId;
     private Long userId;
     private Boolean subStatus;
-    private Date date;
+    private Long paymentId;
+    private String date;
+    private Boolean subProcessed;
 
     public Cancelled(Subscription aggregate) {
         super(aggregate);

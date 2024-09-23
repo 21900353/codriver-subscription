@@ -70,6 +70,7 @@
                     { text: "subId", value: "subId" },
                     { text: "userId", value: "userId" },
                     { text: "subStatus", value: "subStatus" },
+                    { text: "date", value: "date" },
                 ],
             payment : [],
             newValue: {},
@@ -91,6 +92,7 @@
                 'subId': 0,
                 'userId': 0,
                 'subStatus': false,
+                'date': '',
             }
         },
         methods: {

@@ -24,6 +24,8 @@ public class Payment {
 
     private Boolean subStatus;
 
+    private String date;
+
     @PostPersist
     public void onPostPersist() {
         PaymentMade paymentMade = new PaymentMade(this);

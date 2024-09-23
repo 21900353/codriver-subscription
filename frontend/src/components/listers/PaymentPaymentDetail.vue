@@ -17,6 +17,9 @@
             <div>
                 <Boolean label="SubStatus" v-model="item.subStatus" :editMode="editMode" @change="change" />
             </div>
+            <div>
+                <String label="Date" v-model="item.date" :editMode="editMode" @change="change" />
+            </div>
         </v-card-text>
 
         <v-card-actions>
