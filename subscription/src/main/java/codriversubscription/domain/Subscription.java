@@ -23,11 +23,12 @@ public class Subscription {
 
     private Boolean subStatus;
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long paymentId;
 
-    private Date date;
+    private String date;
 
-    private Boolean subProcessed;
+    private Boolean subProcessed = false;
 
     @PostPersist
     public void onPostPersist() {

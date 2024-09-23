@@ -39,7 +39,7 @@ mvn spring-boot:run
 ```
 - payment
 ```
- http :8088/payments paymentId="paymentId" subId="subId" userId="userId" subStatus="subStatus" 
+ http :8088/payments paymentId="paymentId" subId="subId" userId="userId" subStatus="subStatus" date="date" 
 ```
 - mypage
 ```

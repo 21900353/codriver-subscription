@@ -113,6 +113,7 @@
                 'subId': 0,
                 'userId': 0,
                 'subStatus': false,
+                'date': '',
             }
         },
         methods:{

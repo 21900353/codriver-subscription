@@ -113,7 +113,7 @@
                 'userId': 0,
                 'subStatus': false,
                 'paymentId': 0,
-                'date': '2024-09-23',
+                'date': '',
                 'subProcessed': false,
             }
         },
