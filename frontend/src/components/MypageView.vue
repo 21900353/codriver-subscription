@@ -24,6 +24,7 @@
                 { text: "userId", value: "userId" },
                 { text: "subId", value: "subId" },
                 { text: "subStatus", value: "subStatus" },
+                { text: "date", value: "date" },
             ],
             mypage : [],
         }),

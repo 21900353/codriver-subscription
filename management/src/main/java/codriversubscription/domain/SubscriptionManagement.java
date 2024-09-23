@@ -21,16 +21,17 @@ public class SubscriptionManagement {
 
     private Long subId;
 
+    private Long userId;
+
     private Boolean subStatus;
 
-    @PostPersist
-    public void onPostPersist() {
-        Registered registered = new Registered(this);
-        registered.publishAfterCommit();
-    }
+    private Date date;
 
     @PostUpdate
     public void onPostUpdate() {
+        Registered registered = new Registered(this);
+        registered.publishAfterCommit();
+
         Unregistered unregistered = new Unregistered(this);
         unregistered.publishAfterCommit();
     }

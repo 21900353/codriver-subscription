@@ -9,7 +9,13 @@
                 <Number label="SubId" v-model="item.subId" :editMode="editMode" @change="change" />
             </div>
             <div>
+                <Number label="UserId" v-model="item.userId" :editMode="editMode" @change="change" />
+            </div>
+            <div>
                 <Boolean label="SubStatus" v-model="item.subStatus" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <Date label="Date" v-model="item.date" :editMode="editMode" @change="change" />
             </div>
         </v-card-text>
 
