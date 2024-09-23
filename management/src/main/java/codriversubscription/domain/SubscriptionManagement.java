@@ -1,0 +1,102 @@
+package codriversubscription.domain;
+
+import codriversubscription.ManagementApplication;
+import codriversubscription.domain.Registered;
+import codriversubscription.domain.Unregistered;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.*;
+import lombok.Data;
+
+@Entity
+@Table(name = "SubscriptionManagement_table")
+@Data
+//<<< DDD / Aggregate Root
+public class SubscriptionManagement {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    private Long subId;
+
+    private Boolean subStatus;
+
+    @PostPersist
+    public void onPostPersist() {
+        Registered registered = new Registered(this);
+        registered.publishAfterCommit();
+    }
+
+    @PostUpdate
+    public void onPostUpdate() {
+        Unregistered unregistered = new Unregistered(this);
+        unregistered.publishAfterCommit();
+    }
+
+    public static SubscriptionManagementRepository repository() {
+        SubscriptionManagementRepository subscriptionManagementRepository = ManagementApplication.applicationContext.getBean(
+            SubscriptionManagementRepository.class
+        );
+        return subscriptionManagementRepository;
+    }
+
+    //<<< Clean Arch / Port Method
+    public static void subscriptionRequested(PaymentMade paymentMade) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        SubscriptionManagement subscriptionManagement = new SubscriptionManagement();
+        repository().save(subscriptionManagement);
+
+        Registered registered = new Registered(subscriptionManagement);
+        registered.publishAfterCommit();
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(paymentMade.get???()).ifPresent(subscriptionManagement->{
+            
+            subscriptionManagement // do something
+            repository().save(subscriptionManagement);
+
+            Registered registered = new Registered(subscriptionManagement);
+            registered.publishAfterCommit();
+
+         });
+        */
+
+    }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public static void subscriptionCancelled(Cancelled cancelled) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        SubscriptionManagement subscriptionManagement = new SubscriptionManagement();
+        repository().save(subscriptionManagement);
+
+        Unregistered unregistered = new Unregistered(subscriptionManagement);
+        unregistered.publishAfterCommit();
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(cancelled.get???()).ifPresent(subscriptionManagement->{
+            
+            subscriptionManagement // do something
+            repository().save(subscriptionManagement);
+
+            Unregistered unregistered = new Unregistered(subscriptionManagement);
+            unregistered.publishAfterCommit();
+
+         });
+        */
+
+    }
+    //>>> Clean Arch / Port Method
+
+}
+//>>> DDD / Aggregate Root
