@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: subscription
-          image: username/subscription:latest
+          image: user13.azurecr.io/subscription:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -58,7 +58,7 @@ spec:
     spec:
       containers:
         - name: mypage
-          image: username/mypage:latest
+          image: user13.azurecr.io/mypage:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -98,7 +98,7 @@ spec:
     spec:
       containers:
         - name: payment
-          image: username/payment:latest
+          image: user13.azurecr.io/payment:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -138,7 +138,7 @@ spec:
     spec:
       containers:
         - name: management
-          image: username/management:latest
+          image: user13.azurecr.io/management:latest
           ports:
             - containerPort: 8080
           readinessProbe:

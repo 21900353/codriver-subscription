@@ -16,9 +16,12 @@ spec:
     spec:
       containers:
         - name: subscription
-          image: "username/subscription:latest"
+          image: "user13.azurecr.io/subscription:latest"
           ports:
             - containerPort: 8080
+          volumeMounts:
+          - mountPath: "/mnt/data"
+            name: volume
           readinessProbe:
             httpGet:
               path: '/actuator/health'
@@ -35,3 +38,7 @@ spec:
             timeoutSeconds: 2
             periodSeconds: 5
             failureThreshold: 5
+      volumes:
+      - name: volume
+        persistentVolumeClaim:
+          claimName: azurefile

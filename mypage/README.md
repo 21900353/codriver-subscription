@@ -28,7 +28,7 @@ Edit the deployment.yaml under the /kubernetes directory:
     spec:
       containers:
         - name: mypage
-          image: username/mypage:latest   # change this image name
+          image: user13.azurecr.io/mypage:latest   # change this image name
           ports:
             - containerPort: 8080
 

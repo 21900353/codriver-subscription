@@ -28,7 +28,7 @@ Edit the deployment.yaml under the /kubernetes directory:
     spec:
       containers:
         - name: payment
-          image: username/payment:latest   # change this image name
+          image: user13.azurecr.io/payment:latest   # change this image name
           ports:
             - containerPort: 8080
 
