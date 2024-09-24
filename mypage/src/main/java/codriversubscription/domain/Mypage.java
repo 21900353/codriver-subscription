@@ -18,6 +18,6 @@ public class Mypage {
 
     private Long subId;
     private Boolean subStatus;
-    private Date date;
+    private String date;
     private Boolean subProcessed;
 }
