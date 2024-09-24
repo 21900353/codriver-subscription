@@ -112,7 +112,7 @@
                 'subId': 0,
                 'userId': 0,
                 'subStatus': false,
-                'date': '2024-09-23',
+                'date': '',
                 'subProcessed': false,
             }
         },

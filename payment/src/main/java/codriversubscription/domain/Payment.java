@@ -26,7 +26,7 @@ public class Payment {
 
     private String date;
 
-    private Boolean subProcessed;
+    private String subProcessed;
 
     @PostPersist
     public void onPostPersist() {
@@ -41,11 +41,9 @@ public class Payment {
         return paymentRepository;
     }
 
-    public void pay() {
+    public void pay2() {
         //implement business logic here:
 
-        PaymentMade paymentMade = new PaymentMade(this);
-        paymentMade.publishAfterCommit();
     }
 }
 //>>> DDD / Aggregate Root
