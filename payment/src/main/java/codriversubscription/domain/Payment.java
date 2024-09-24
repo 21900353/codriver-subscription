@@ -1,7 +1,6 @@
 package codriversubscription.domain;
 
 import codriversubscription.PaymentApplication;
-import codriversubscription.domain.PaymentMade;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -29,10 +28,7 @@ public class Payment {
     private String subProcessed;
 
     @PostPersist
-    public void onPostPersist() {
-        PaymentMade paymentMade = new PaymentMade(this);
-        paymentMade.publishAfterCommit();
-    }
+    public void onPostPersist() {}
 
     public static PaymentRepository repository() {
         PaymentRepository paymentRepository = PaymentApplication.applicationContext.getBean(
@@ -45,6 +41,8 @@ public class Payment {
     public void pay(PayCommand payCommand) {
         //implement business logic here:
 
+        PaymentMade paymentMade = new PaymentMade(this);
+        paymentMade.publishAfterCommit();
     }
     //>>> Clean Arch / Port Method
 

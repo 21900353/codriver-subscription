@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient(name = "payment", url = "${api.url.payment}")
 public interface PaymentService {
-    @RequestMapping(method = RequestMethod.PUT, path = "/payments/{id}//pay")
+    @RequestMapping(method = RequestMethod.POST, path = "/payments/{id}//pay")
     public void pay(
         @PathVariable("id") Long paymentId,
         @RequestBody PayCommand payCommand

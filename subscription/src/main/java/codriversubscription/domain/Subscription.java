@@ -25,7 +25,7 @@ public class Subscription {
 
     private String date;
 
-    private Boolean subProcessed;
+    private Boolean subProcessed = false;
 
     @PostPersist
     public void onPostPersist() {
@@ -36,7 +36,7 @@ public class Subscription {
         // mappings goes here
         SubscriptionApplication.applicationContext
             .getBean(codriversubscription.external.PaymentService.class)
-            .pay(/* get???(), */payCommand);
+            .pay(subId, payCommand);
 
         Requested requested = new Requested(this);
         requested.publishAfterCommit();
@@ -67,7 +67,7 @@ public class Subscription {
     }
 
     //<<< Clean Arch / Port Method
-    public static void subscribed(Registered registered) {
+    public static void registerComplete(Registered registered) {
         //implement business logic here:
 
         /** Example 1:  new item 
@@ -91,7 +91,7 @@ public class Subscription {
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void cancelled(Unregistered unregistered) {
+    public static void unregisterComplete(Unregistered unregistered) {
         //implement business logic here:
 
         /** Example 1:  new item 

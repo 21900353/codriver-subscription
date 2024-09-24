@@ -27,30 +27,32 @@ public class PolicyHandler {
         value = KafkaProcessor.INPUT,
         condition = "headers['type']=='Registered'"
     )
-    public void wheneverRegistered_Subscribed(@Payload Registered registered) {
+    public void wheneverRegistered_RegisterComplete(
+        @Payload Registered registered
+    ) {
         Registered event = registered;
         System.out.println(
-            "\n\n##### listener Subscribed : " + registered + "\n\n"
+            "\n\n##### listener RegisterComplete : " + registered + "\n\n"
         );
 
         // Sample Logic //
-        Subscription.subscribed(event);
+        Subscription.registerComplete(event);
     }
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
         condition = "headers['type']=='Unregistered'"
     )
-    public void wheneverUnregistered_Cancelled(
+    public void wheneverUnregistered_UnregisterComplete(
         @Payload Unregistered unregistered
     ) {
         Unregistered event = unregistered;
         System.out.println(
-            "\n\n##### listener Cancelled : " + unregistered + "\n\n"
+            "\n\n##### listener UnregisterComplete : " + unregistered + "\n\n"
         );
 
         // Sample Logic //
-        Subscription.cancelled(event);
+        Subscription.unregisterComplete(event);
     }
 }
 //>>> Clean Arch / Inbound Adaptor
