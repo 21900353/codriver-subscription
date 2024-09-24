@@ -19,6 +19,12 @@ spec:
           image: "user13.azurecr.io/subscription:latest"
           ports:
             - containerPort: 8080
+          env:
+          - name: CLASS
+            valueFrom:
+              configMapKeyRef:
+                name: subscription-config
+                key: class
           volumeMounts:
           - mountPath: "/mnt/data"
             name: volume
