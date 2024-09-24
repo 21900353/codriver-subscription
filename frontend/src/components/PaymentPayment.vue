@@ -40,7 +40,7 @@
                     text
                     @click="save"
                 >
-                    Pay2
+                    Pay
                 </v-btn>
                 <v-btn
                     color="primary"

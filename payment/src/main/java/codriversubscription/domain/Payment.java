@@ -41,7 +41,7 @@ public class Payment {
         return paymentRepository;
     }
 
-    public void pay2() {
+    public void pay() {
         //implement business logic here:
 
     }

@@ -36,7 +36,7 @@ public class Subscription {
         // mappings goes here
         SubscriptionApplication.applicationContext
             .getBean(codriversubscription.external.PaymentService.class)
-            .pay2(payment);
+            .pay(payment);
 
         Requested requested = new Requested(this);
         requested.publishAfterCommit();
