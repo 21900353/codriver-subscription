@@ -11,4 +11,5 @@ public class Payment {
     private Long userId;
     private Boolean subStatus;
     private String date;
+    private String subProcessed;
 }

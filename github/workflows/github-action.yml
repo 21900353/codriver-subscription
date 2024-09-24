@@ -30,8 +30,8 @@ jobs:
       - name: Build Maven Projects
         run: |
           mvn clean package -f ./subscription/pom.xml
-          mvn clean package -f ./payment/pom.xml
           mvn clean package -f ./mypage/pom.xml
+          mvn clean package -f ./payment/pom.xml
           mvn clean package -f ./management/pom.xml
 
       - name: Docker Build and push for Subscription
@@ -44,16 +44,6 @@ jobs:
             ghcr.io/${{ github.repository }}/subscription:latest
             ghcr.io/${{ github.repository }}/subscription:${{ github.ref_name }}
             
-      - name: Docker Build and push for Payment
-        uses: docker/build-push-action@v4
-        with:
-          context: ./payment
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository }}/payment:latest
-            ghcr.io/${{ github.repository }}/payment:${{ github.ref_name }}
-            
       - name: Docker Build and push for Mypage
         uses: docker/build-push-action@v4
         with:
@@ -63,6 +53,16 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/mypage:latest
             ghcr.io/${{ github.repository }}/mypage:${{ github.ref_name }}
+            
+      - name: Docker Build and push for Payment
+        uses: docker/build-push-action@v4
+        with:
+          context: ./payment
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/payment:latest
+            ghcr.io/${{ github.repository }}/payment:${{ github.ref_name }}
             
       - name: Docker Build and push for Management
         uses: docker/build-push-action@v4

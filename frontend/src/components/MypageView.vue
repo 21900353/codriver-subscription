@@ -25,6 +25,7 @@
                 { text: "subId", value: "subId" },
                 { text: "subStatus", value: "subStatus" },
                 { text: "date", value: "date" },
+                { text: "subProcessed", value: "subProcessed" },
             ],
             mypage : [],
         }),

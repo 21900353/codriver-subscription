@@ -37,7 +37,7 @@ services:
       - ./subscription:/usr/src
       - ./maven-repo:/root/.m2
       
-  payment:
+  mypage:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -48,10 +48,10 @@ services:
       - 8083:8083
     working_dir: /usr/src
     volumes:
-      - ./payment:/usr/src
+      - ./mypage:/usr/src
       - ./maven-repo:/root/.m2
       
-  mypage:
+  payment:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -62,7 +62,7 @@ services:
       - 8084:8084
     working_dir: /usr/src
     volumes:
-      - ./mypage:/usr/src
+      - ./payment:/usr/src
       - ./maven-repo:/root/.m2
       
   management:

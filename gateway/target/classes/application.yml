@@ -13,14 +13,14 @@ spring:
           uri: http://localhost:8082
           predicates:
             - Path=/subscriptions/**, 
-        - id: payment
+        - id: mypage
           uri: http://localhost:8083
           predicates:
-            - Path=/payments/**, 
-        - id: mypage
+            - Path=, 
+        - id: payment
           uri: http://localhost:8084
           predicates:
-            - Path=, 
+            - Path=/payments/**, 
         - id: management
           uri: http://localhost:8085
           predicates:
@@ -53,14 +53,14 @@ spring:
           uri: http://subscription:8080
           predicates:
             - Path=/subscriptions/**, 
-        - id: payment
-          uri: http://payment:8080
-          predicates:
-            - Path=/payments/**, 
         - id: mypage
           uri: http://mypage:8080
           predicates:
             - Path=, 
+        - id: payment
+          uri: http://payment:8080
+          predicates:
+            - Path=/payments/**, 
         - id: management
           uri: http://management:8080
           predicates:

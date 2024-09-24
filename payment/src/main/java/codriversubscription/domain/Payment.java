@@ -26,6 +26,8 @@ public class Payment {
 
     private String date;
 
+    private String subProcessed;
+
     @PostPersist
     public void onPostPersist() {
         PaymentMade paymentMade = new PaymentMade(this);
@@ -39,7 +41,7 @@ public class Payment {
         return paymentRepository;
     }
 
-    public void pay() {
+    public void pay2() {
         //implement business logic here:
 
     }

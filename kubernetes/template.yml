@@ -43,22 +43,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: payment
+  name: mypage
   labels:
-    app: payment
+    app: mypage
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: payment
+      app: mypage
   template:
     metadata:
       labels:
-        app: payment
+        app: mypage
     spec:
       containers:
-        - name: payment
-          image: username/payment:latest
+        - name: mypage
+          image: username/mypage:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -83,22 +83,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mypage
+  name: payment
   labels:
-    app: mypage
+    app: payment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mypage
+      app: payment
   template:
     metadata:
       labels:
-        app: mypage
+        app: payment
     spec:
       containers:
-        - name: mypage
-          image: username/mypage:latest
+        - name: payment
+          image: username/payment:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -182,23 +182,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: payment
-  labels:
-    app: payment
-spec:
-  ports:
-    - port: 8080
-      targetPort: 8080
-  selector:
-    app: payment
-
-
----
-
-
-apiVersion: v1
-kind: Service
-metadata:
   name: mypage
   labels:
     app: mypage
@@ -208,6 +191,23 @@ spec:
       targetPort: 8080
   selector:
     app: mypage
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment
+  labels:
+    app: payment
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: payment
 
 
 ---

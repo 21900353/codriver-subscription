@@ -112,7 +112,6 @@
                 'subId': 0,
                 'userId': 0,
                 'subStatus': false,
-                'paymentId': 0,
                 'date': '',
                 'subProcessed': false,
             }

@@ -71,6 +71,7 @@
                     { text: "userId", value: "userId" },
                     { text: "subStatus", value: "subStatus" },
                     { text: "date", value: "date" },
+                    { text: "subProcessed", value: "subProcessed" },
                 ],
             subscriptionManagement : [],
             newValue: {},
@@ -91,7 +92,8 @@
                 'subId': 0,
                 'userId': 0,
                 'subStatus': false,
-                'date': '2024-09-23',
+                'date': '',
+                'subProcessed': false,
             }
         },
         methods: {

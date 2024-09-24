@@ -8,9 +8,9 @@ Vue.use(Router);
 import SubscriptionSubscriptionManager from "./components/listers/SubscriptionSubscriptionCards"
 import SubscriptionSubscriptionDetail from "./components/listers/SubscriptionSubscriptionDetail"
 
+
 import PaymentPaymentManager from "./components/listers/PaymentPaymentCards"
 import PaymentPaymentDetail from "./components/listers/PaymentPaymentDetail"
-
 
 import ManagementSubscriptionManagementManager from "./components/listers/ManagementSubscriptionManagementCards"
 import ManagementSubscriptionManagementDetail from "./components/listers/ManagementSubscriptionManagementDetail"
@@ -31,6 +31,7 @@ export default new Router({
                 component: SubscriptionSubscriptionDetail
             },
 
+
             {
                 path: '/payments/payments',
                 name: 'PaymentPaymentManager',
@@ -41,7 +42,6 @@ export default new Router({
                 name: 'PaymentPaymentDetail',
                 component: PaymentPaymentDetail
             },
-
 
             {
                 path: '/managements/subscriptionManagements',

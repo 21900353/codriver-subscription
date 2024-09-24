@@ -25,7 +25,9 @@ public class SubscriptionManagement {
 
     private Boolean subStatus;
 
-    private Date date;
+    private String date;
+
+    private Boolean subProcessed;
 
     @PostUpdate
     public void onPostUpdate() {
@@ -51,8 +53,6 @@ public class SubscriptionManagement {
         SubscriptionManagement subscriptionManagement = new SubscriptionManagement();
         repository().save(subscriptionManagement);
 
-        Registered registered = new Registered(subscriptionManagement);
-        registered.publishAfterCommit();
         */
 
         /** Example 2:  finding and process
@@ -62,8 +62,6 @@ public class SubscriptionManagement {
             subscriptionManagement // do something
             repository().save(subscriptionManagement);
 
-            Registered registered = new Registered(subscriptionManagement);
-            registered.publishAfterCommit();
 
          });
         */
@@ -79,8 +77,6 @@ public class SubscriptionManagement {
         SubscriptionManagement subscriptionManagement = new SubscriptionManagement();
         repository().save(subscriptionManagement);
 
-        Unregistered unregistered = new Unregistered(subscriptionManagement);
-        unregistered.publishAfterCommit();
         */
 
         /** Example 2:  finding and process
@@ -90,8 +86,6 @@ public class SubscriptionManagement {
             subscriptionManagement // do something
             repository().save(subscriptionManagement);
 
-            Unregistered unregistered = new Unregistered(subscriptionManagement);
-            unregistered.publishAfterCommit();
 
          });
         */

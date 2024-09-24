@@ -23,12 +23,9 @@ public class Subscription {
 
     private Boolean subStatus;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long paymentId;
-
     private String date;
 
-    private Boolean subProcessed = false;
+    private Boolean subProcessed;
 
     @PostPersist
     public void onPostPersist() {
@@ -39,7 +36,7 @@ public class Subscription {
         // mappings goes here
         SubscriptionApplication.applicationContext
             .getBean(codriversubscription.external.PaymentService.class)
-            .pay(payment);
+            .pay2(payment);
 
         Requested requested = new Requested(this);
         requested.publishAfterCommit();

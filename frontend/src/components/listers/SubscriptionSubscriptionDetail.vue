@@ -15,9 +15,6 @@
                 <Boolean label="SubStatus" v-model="item.subStatus" :editMode="editMode" @change="change" />
             </div>
             <div>
-                <Number label="PaymentId" v-model="item.paymentId" :editMode="editMode" @change="change" />
-            </div>
-            <div>
                 <String label="Date" v-model="item.date" :editMode="editMode" @change="change" />
             </div>
             <div>

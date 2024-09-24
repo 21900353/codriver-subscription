@@ -21,8 +21,8 @@ cd /bin
 See the README.md files inside the each microservices directory:
 
 - subscription
-- payment
 - mypage
+- payment
 - management
 
 
@@ -35,18 +35,18 @@ mvn spring-boot:run
 ## Test by API
 - subscription
 ```
- http :8088/subscriptions subId="subId" userId="userId" subStatus="subStatus" paymentId="paymentId" date="date" subProcessed="subProcessed" 
-```
-- payment
-```
- http :8088/payments paymentId="paymentId" subId="subId" userId="userId" subStatus="subStatus" date="date" 
+ http :8088/subscriptions subId="subId" userId="userId" subStatus="subStatus" date="date" subProcessed="subProcessed" 
 ```
 - mypage
 ```
 ```
+- payment
+```
+ http :8088/payments paymentId="paymentId" subId="subId" userId="userId" subStatus="subStatus" date="date" subProcessed="subProcessed" 
+```
 - management
 ```
- http :8088/subscriptionManagements id="id" subId="subId" userId="userId" subStatus="subStatus" date="date" 
+ http :8088/subscriptionManagements id="id" subId="subId" userId="userId" subStatus="subStatus" date="date" subProcessed="subProcessed" 
 ```
 
 

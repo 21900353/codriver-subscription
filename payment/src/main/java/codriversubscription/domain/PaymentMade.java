@@ -16,6 +16,7 @@ public class PaymentMade extends AbstractEvent {
     private Long userId;
     private Boolean subStatus;
     private String date;
+    private String subProcessed;
 
     public PaymentMade(Payment aggregate) {
         super(aggregate);
