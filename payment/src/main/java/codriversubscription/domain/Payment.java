@@ -41,9 +41,12 @@ public class Payment {
         return paymentRepository;
     }
 
-    public void pay2() {
+    //<<< Clean Arch / Port Method
+    public void pay(PayCommand payCommand) {
         //implement business logic here:
 
     }
+    //>>> Clean Arch / Port Method
+
 }
 //>>> DDD / Aggregate Root

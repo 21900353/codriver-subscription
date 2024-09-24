@@ -32,11 +32,11 @@ public class Subscription {
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
-        codriversubscription.external.Payment payment = new codriversubscription.external.Payment();
+        codriversubscription.external.PayCommand payCommand = new codriversubscription.external.PayCommand();
         // mappings goes here
         SubscriptionApplication.applicationContext
             .getBean(codriversubscription.external.PaymentService.class)
-            .pay2(payment);
+            .pay(/* get???(), */payCommand);
 
         Requested requested = new Requested(this);
         requested.publishAfterCommit();
