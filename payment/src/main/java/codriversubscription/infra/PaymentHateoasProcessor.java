@@ -12,6 +12,12 @@ public class PaymentHateoasProcessor
 
     @Override
     public EntityModel<Payment> process(EntityModel<Payment> model) {
+        model.add(
+            Link
+                .of(model.getRequiredLink("self").getHref() + "//pay")
+                .withRel("/pay")
+        );
+
         return model;
     }
 }
