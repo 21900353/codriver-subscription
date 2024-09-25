@@ -91,6 +91,18 @@
 
 구독 처리 완료 후 구독 완료 이벤트를 발생시키고 카프카 mng-sub 토픽으로 메시지를 발행한다. 이 메시지는 구독 서비스로 전달되어 회원이 확인할 수 있도록 완료 표시 하는 역할을 한다.
 
+## Compensation
+
+## Gateway
+
+![image](https://github.com/user-attachments/assets/a736734c-5518-4da6-be63-f40530cc4986)
+
+게이트웨이 라우트 규칙은 위와 같다. 게이트웨이 IP의 /subscriptions 로 들어오는 트래픽은 subscription이 리슨 중인 8082 포트로 라우팅한다. 마찬가지로 /mypage 트래픽은 8083 포트, /payments 트래픽은 8084 포트, /subscriptionManagements 트래픽은 8085 포트로 라우팅 한다. 이 프로젝트에서 frontend 는 사용하지 않는다.
+
+![image](https://github.com/user-attachments/assets/fe3a7447-cc88-413a-9d7f-ec8aefec3f40)
+
+내부에서 요청 시 subscription 서비스 요청 시 http://subscription:8080 와 같은 URI를 사용할 수 있고, 같은 방법으로 mypage, payments, subscriptionManagements 요청이 가능하다.
+
 # 운영
 
 ## 클라우드 배포
