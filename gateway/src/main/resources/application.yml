@@ -16,7 +16,7 @@ spring:
         - id: mypage
           uri: http://localhost:8083
           predicates:
-            - Path=, 
+            - Path=/mypage/**, 
         - id: payment
           uri: http://localhost:8084
           predicates:
@@ -56,7 +56,7 @@ spring:
         - id: mypage
           uri: http://mypage:8080
           predicates:
-            - Path=, 
+            - Path=/mypage/**, 
         - id: payment
           uri: http://payment:8080
           predicates:
