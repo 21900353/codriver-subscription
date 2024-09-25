@@ -226,7 +226,7 @@ spec:
 
 ## 서비스 메쉬
 
-Istio(demo 프로필)을 설치하여 서비스 메쉬를 구성하였다. Addon으로 Loki, Grafana, Prometheus, Kiala 등을 설치하였다. 
+Istio(demo 프로필)을 설치하여 istio-system 이름의 네임스페이스에 서비스 메쉬를 구성하였다. Addon으로 Loki, Grafana, Prometheus, Kiala 등을 설치하였다. 
 
 ![image (10)](https://github.com/user-attachments/assets/65440df8-d416-41b3-9d8f-034ad867fa2b)
 
