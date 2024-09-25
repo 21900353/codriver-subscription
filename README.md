@@ -79,7 +79,29 @@
 - payment context에서 circuit breaker와 fallback을 구현한다. (비기능적 요구사항 2)
 - 웹상의 마이페이지에서 mypage read model을 이용하여 구독 이력을 조회한다. (비기능적 요구사항 3)
 
+# 개발
+
+## Saga
+
+![image](https://github.com/user-attachments/assets/bff85d83-5ecf-4abb-bd7b-db57cbcc56ef)
+
+회원에 의해 구독 신청 커맨드 실행 시 구독 이벤트가 발생하여 메시지가 카프카로 publish 된다. sub-pay 라는 이름의 토픽으로 메시지가 발행되며, 이 토픽을 subscribe 하는 결제 서비스로 메시지가 전달된다. 
+
+이어서 결제 처리가 되면 결제 완료 메시지가 카프카의 pay-mng 토픽으로 발행되며, 다시 subscriber 인 구독 처리 서비스로 발송된다. 
+
+구독 처리 완료 후 구독 완료 이벤트를 발생시키고 카프카 mng-sub 토픽으로 메시지를 발행한다. 이 메시지는 구독 서비스로 전달되어 회원이 확인할 수 있도록 완료 표시 하는 역할을 한다.
+
+# 운영
+
 ## 클라우드 배포
+
+![image](https://github.com/user-attachments/assets/d1648e5d-cbd6-438c-9fe0-8f798ee5e8d8)
+
+Azure에 user13-rsrcgrp 이름의 리소스 그룹 아래 클러스터를 배포하여 운영한다. 이미지는 user13-arc 이름의 레지스트리에 저장하고 있고, URI는 user13.azurecr.io 이다.
+
+![image](https://github.com/user-attachments/assets/598d7d09-025a-43d8-bfc5-f282340057a7)
+
+쿠버네티스의 기본 네임스페이스에 클러스터를 운영한다. subscription, payment, management, mypage 네 개의 서비스는 Kafka 를 통해 메시지를 주고 받는다. HTTP 요청은 gateway 에서 라우팅 되어 각 서비스에 전달된다.
 
 ## 오토스케일
 
@@ -170,7 +192,7 @@ spec:
 
 ![image (6)](https://github.com/user-attachments/assets/f675b578-8db3-4dcb-ab91-43bf8d6f84f1)
 
-그 다음 deployment.yaml을 사용해 /mnt/data 경로에 mount 시켰다. subscription pod에서 접근 가능하다.
+그 다음 deployment.yaml을 사용해 /mnt/data 경로에 mount 시켰다. subscription pod에서 접근 가능하기 때문에 추후 비정형 구독 정보를 저장할 수 있을 것이다.
 
 ![image (7)](https://github.com/user-attachments/assets/5f042e6b-8c90-44e4-a314-753a82b37733)
 
@@ -180,8 +202,9 @@ spec:
 
 ![image (8)](https://github.com/user-attachments/assets/3e5909e9-33b3-4791-950b-ac66089f1b75)
 
+↓ subcription의 ConfigMap 예시 / 아직 subscription 환경정보는 가지고 있지 않다.
+
 ![subcription의 ConfigMap](https://github.com/user-attachments/assets/8a645bd2-b855-4bee-b88f-ddd56d1a9e3a)
-subcription의 ConfigMap
 
 ## 서비스 메쉬
 
@@ -194,7 +217,6 @@ Istio(demo 프로필)을 설치하여 서비스 메쉬를 구성하였다. Addon
 ### Monitoring 툴
 
 서비스 메쉬 모니터링을 위해 Kiali, Grafana, Loki를 사용하기 위해 ‘codriver-ingress’ 라는 ingress를 설정하였다.
-
 
 ↓ Kiali 대쉬보드
 ![image (11)](https://github.com/user-attachments/assets/301c9598-1c72-47db-88c7-e4963fb751b4)
