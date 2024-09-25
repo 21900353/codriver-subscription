@@ -233,8 +233,7 @@ spec:
 ![image](https://github.com/user-attachments/assets/a23b877c-5e7a-4586-af69-784745be02a2)
 
 ## 구성
-
-Istio(demo 프로필)을 설치하여 istio-system 이름의 네임스페이스에 서비스 메쉬를 구성하였다. Addon으로 Loki, Grafana, Prometheus, Kiala 등을 설치하였다.
+네 개의 서비스와 카프카가 사이드카로 연결되어 서비스 메쉬를 구성한다. Control plane은 Istio(demo 프로필)을 설치하여 istio-system 이름의 네임스페이스에 만들었다. Addon으로 Loki, Grafana, Prometheus, Kiala 등을 설치하였다.
 
 ![image (10)](https://github.com/user-attachments/assets/65440df8-d416-41b3-9d8f-034ad867fa2b)
 
