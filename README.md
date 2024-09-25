@@ -228,9 +228,13 @@ spec:
 
 ![subcription의 ConfigMap](https://github.com/user-attachments/assets/8a645bd2-b855-4bee-b88f-ddd56d1a9e3a)
 
-## 서비스 메쉬
+## 서비스 메쉬 아키텍처
 
-Istio(demo 프로필)을 설치하여 istio-system 이름의 네임스페이스에 서비스 메쉬를 구성하였다. Addon으로 Loki, Grafana, Prometheus, Kiala 등을 설치하였다. 
+![image](https://github.com/user-attachments/assets/a23b877c-5e7a-4586-af69-784745be02a2)
+
+## 구성
+
+Istio(demo 프로필)을 설치하여 istio-system 이름의 네임스페이스에 서비스 메쉬를 구성하였다. Addon으로 Loki, Grafana, Prometheus, Kiala 등을 설치하였다.
 
 ![image (10)](https://github.com/user-attachments/assets/65440df8-d416-41b3-9d8f-034ad867fa2b)
 
