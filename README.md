@@ -81,6 +81,10 @@
 
 # 개발
 
+## MSA 아키텍처
+
+![image](https://github.com/user-attachments/assets/032079c5-5080-4178-bc8f-af6da918259f)
+
 ## Saga
 
 ![image](https://github.com/user-attachments/assets/bff85d83-5ecf-4abb-bd7b-db57cbcc56ef)
