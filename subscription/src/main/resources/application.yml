@@ -31,12 +31,12 @@ spring:
         event-in:
           group: subscription
 #<<< EDA / Topic Name
-          destination: codriversubscription
+          destination: mng-sub
 #>>> EDA / Topic Name
           contentType: application/json
         event-out:
 #<<< EDA / Topic Name
-          destination: codriversubscription
+          destination: sub-pay
 #>>> EDA / Topic Name
           contentType: application/json
 

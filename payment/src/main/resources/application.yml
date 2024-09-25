@@ -31,12 +31,12 @@ spring:
         event-in:
           group: payment
 #<<< EDA / Topic Name
-          destination: codriversubscription
+          destination: sub-pay
 #>>> EDA / Topic Name
           contentType: application/json
         event-out:
 #<<< EDA / Topic Name
-          destination: codriversubscription
+          destination: pay-mng
 #>>> EDA / Topic Name
           contentType: application/json
 
@@ -82,3 +82,7 @@ spring:
           contentType: application/json
 
 
+management:
+  health:
+    probes:
+      enabled: true

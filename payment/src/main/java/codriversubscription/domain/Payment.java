@@ -34,12 +34,14 @@ public class Payment {
         PaymentRepository paymentRepository = PaymentApplication.applicationContext.getBean(
             PaymentRepository.class
         );
+
         return paymentRepository;
     }
 
     //<<< Clean Arch / Port Method
     public void pay(PayCommand payCommand) {
         //implement business logic here:
+        // No business logic needed
 
         PaymentMade paymentMade = new PaymentMade(this);
         paymentMade.publishAfterCommit();
