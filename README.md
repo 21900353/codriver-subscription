@@ -103,6 +103,12 @@
 
 내부에서 요청 시 subscription 서비스 요청 시 http://subscription:8080 와 같은 URI를 사용할 수 있고, 같은 방법으로 mypage, payments, subscriptionManagements 요청이 가능하다.
 
+## CQRS
+
+![image](https://github.com/user-attachments/assets/9bb80dd0-6508-4f05-8859-c939b493f2b2)
+
+회원의 subscription 정보에 CQRS를 적용하기 위해 subscription 밖인 mypage 에서 회원의 구독 이력 및 상태 조회가 가능하도록 만들었다. 회원은 subscription 도메인에서 구독 신청 또는 취소만 할 수 있고, mypage 도메인에서는 조회만 할 수 있기 때문에 CQRS 조건을 충족한다.
+
 # 운영
 
 ## 클라우드 배포
