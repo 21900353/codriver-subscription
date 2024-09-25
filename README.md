@@ -89,6 +89,8 @@ kubectl autoscale deployment order --cpu-percent=50 --min=1 --max=3
 
 ![image (4)](https://github.com/user-attachments/assets/a69e9466-219b-434e-b883-4c99735cffba)
 
+subscription, payment, management, mypage 에 스케일 아웃 규칙을 적용하였다. Pod는 기본 1개이고, CPU 사용량이 50%를 넘어갈 경우 Pod가 최대 3개까지 증가할 수 있다.
+
 ## Circuit breaker
 
 결제 컨테이너의 circuit breaker는 Istio를 사용해 구현하였다. 설정은 아래와 같이 하였는데, 한 번의 5xx 오류가 발생하면 그 컨테이너는 3분 간 eject 된다.
